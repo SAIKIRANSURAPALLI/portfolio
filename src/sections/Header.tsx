@@ -1,8 +1,8 @@
 "use client";
+
 import React, { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { Menu, X } from "lucide-react";
 
 const navigation = [
   { name: "Home", link: "#home" },
@@ -14,7 +14,7 @@ const navigation = [
   { name: "Resume", link: "/surapallisaikiran", isDownload: true },
 ];
 
-export default function Header() {
+export const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleMenu = () => {
@@ -22,73 +22,24 @@ export default function Header() {
   };
 
   return (
-    <header className="fixed top-0 w-full z-50 bg-black/50 backdrop-blur">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center py-4 md:justify-start md:space-x-10">
-          <div className="flex justify-start lg:w-0 lg:flex-1">
-            <Link href="/" className="flex items-center">
-              <Image
-                src="/placeholder.svg"
-                alt="Logo"
-                width={40}
-                height={40}
-                className="h-8 w-auto sm:h-10"
-              />
-              <span className="ml-2 text-xl font-bold text-white">
-                Your Brand
-              </span>
-            </Link>
-          </div>
-          <div className="-mr-2 -my-2 md:hidden">
-            <button
-              type="button"
-              className="bg-white/10 rounded-md p-2 inline-flex items-center justify-center text-white hover:bg-white/20 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500"
-              onClick={toggleMenu}
-              aria-expanded={isOpen}
-              aria-label="Toggle menu"
-            >
-              {isOpen ? (
-                <X className="h-6 w-6" aria-hidden="true" />
-              ) : (
-                <Menu className="h-6 w-6" aria-hidden="true" />
-              )}
-            </button>
-          </div>
-          <nav className="hidden md:flex space-x-10">
-            {navigation.map((item) => (
-              <Link
-                key={item.name}
-                href={item.link}
-                className="text-base font-medium text-white hover:text-gray-300 transition-colors"
-                onClick={
-                  item.isDownload
-                    ? (e) => {
-                        e.preventDefault();
-                        window.location.href = item.link;
-                      }
-                    : undefined
-                }
-                download={item.isDownload ? item.name : undefined}
-              >
-                {item.name}
-              </Link>
-            ))}
-          </nav>
-        </div>
-      </div>
-
-      {/* Mobile menu */}
-      <div
-        className={`${
-          isOpen ? "block" : "hidden"
-        } md:hidden absolute top-full left-0 w-full bg-black/90 backdrop-blur-sm`}
-      >
-        <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+    <header className="fixed top-0 w-full z-50 backdrop-blur flex justify-start md:justify-center items-center">
+      <div className="flex justify-between items-center p-4 w-full md:w-auto">
+        <button
+          className="text-white md:hidden focus:outline-none order-first"
+          onClick={toggleMenu}
+        >
+          &#9776;
+        </button>
+        <nav
+          className={`flex flex-col md:flex-row md:gap-6 absolute md:relative md:bg-transparent w-full md:w-auto left-0 md:p-0 transition-transform gap-1 p-4 border border-white/15 rounded-lg bg-white/10 backdrop-blur ${
+            isOpen ? "top-16" : "top-[-490px]"
+          } md:top-0 z-50`}
+        >
           {navigation.map((item) => (
             <Link
               key={item.name}
               href={item.link}
-              className="block px-3 py-2 rounded-md text-base font-medium text-white hover:text-gray-300 hover:bg-white/10 transition-colors"
+              className="nav-item block text-white px-6 py-3 rounded-full hover:bg-gradient-to-r from-emerald-300 to-sky-400 transition-all"
               onClick={(e) => {
                 if (item.isDownload) {
                   e.preventDefault();
@@ -102,8 +53,8 @@ export default function Header() {
               {item.name}
             </Link>
           ))}
-        </div>
+        </nav>
       </div>
     </header>
   );
-}
+};

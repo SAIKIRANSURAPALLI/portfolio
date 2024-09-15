@@ -10,7 +10,7 @@ import { Fragment } from "react";
 
 const certifications = [
   {
-    title: "Certified Full Stack Web Developer",
+    title: "Certified Python Full-Stack Web Developer",
     issuer: "Social Prachar",
     description:
       "This certification validates my comprehensive skills in full-stack web development, with a focus on Python. It demonstrates my ability to design, develop, and deploy scalable web applications.",
@@ -18,7 +18,7 @@ const certifications = [
     link: "https://drive.google.com/file/d/1LYGkOLs9MQWP3LMAfDhJuOevM89l3CZg/view?usp=sharing",
   },
   {
-    title: "Certified Full Stack Web Developer",
+    title: "Certified Java Full-Stack Web Developer",
     issuer: "Pentagon Space",
     description:
       "This certification highlights my proficiency in Java as a full-stack web developer. It signifies my expertise in building and maintaining dynamic web applications using Java-based technologies.",

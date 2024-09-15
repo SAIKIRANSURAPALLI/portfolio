@@ -1,5 +1,5 @@
 "use client";
-import saikiran from "@/assets/images/saikiran.png";
+import memojimage from "@/assets/images/memoji-computer.png";
 import Image from "next/image";
 import ArrowDown from "@/assets/icons/arrow-down.svg";
 import grainImage from "@/assets/images/grain.jpg";
@@ -120,7 +120,7 @@ export const HeroSection = () => {
       <div className="container">
         <div className="flex flex-col items-center">
           <Image
-            src={saikiran}
+            src={memojimage}
             className="w-[200px] h-[200px] rounded-full opacity-80 transparent"
             alt="Person Peeking from behind laptop"
             style={{ opacity: 0.5 }}
