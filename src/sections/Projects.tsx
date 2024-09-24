@@ -2,6 +2,10 @@
 import darkSaasLandingPage from "@/assets/images/dark-saas-landing-page.png";
 import lightSaasLandingPage from "@/assets/images/light-saas-landing-page.png";
 import aiStartupLandingPage from "@/assets/images/ai-startup-landing-page.png";
+import mock from "@/assets/images/mock.png";
+import muzic from "@/assets/images/muzic.png";
+import staking from "@/assets/images/staking.png";
+import portfolio from "@/assets/images/portfolio.png";
 import Image from "next/image";
 import CheckIcon from "@/assets/icons/check-circle.svg";
 import ArrowUpRightIcon from "@/assets/icons/arrow-up-right.svg";
@@ -25,7 +29,7 @@ const portfolioProjects = [
     ],
     link: "https://saikiranportfolio.vercel.app",
     github: "https://github.com/saikiran/portfolio",
-    image: aiStartupLandingPage,
+    image: portfolio,
   },
   {
     company: "AI Resume Builder",
@@ -55,7 +59,7 @@ const portfolioProjects = [
     ],
     link: "https://ai-mock-interview-zeta.vercel.app",
     github: "https://github.com/saikiran/ai-interview-mocker",
-    image: lightSaasLandingPage,
+    image: mock,
   },
   {
     company: "Muzic",
@@ -70,7 +74,7 @@ const portfolioProjects = [
     ],
     link: "https://muzic-psi.vercel.app",
     github: "https://github.com/saikiran/muzic",
-    image: aiStartupLandingPage,
+    image: muzic,
   },
   {
     company: "Staking Dapp",
@@ -85,7 +89,7 @@ const portfolioProjects = [
     ],
     link: "https://staking-dapp-flax.vercel.app",
     github: "https://github.com/saikiran/staking-dapp",
-    image: aiStartupLandingPage,
+    image: staking,
   },
   {
     company: "BlockForge",

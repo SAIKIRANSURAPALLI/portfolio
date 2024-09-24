@@ -2,7 +2,6 @@
 
 import React, { useState } from "react";
 import Link from "next/link";
-import Image from "next/image";
 
 const navigation = [
   { name: "Home", link: "#home" },
@@ -11,7 +10,7 @@ const navigation = [
   { name: "Certifications", link: "#certification" },
   { name: "About", link: "#about" },
   { name: "Contact", link: "#contact" },
-  { name: "Resume", link: "/surapallisaikiran", isDownload: true },
+  { name: "Resume", link: "/resume" },
 ];
 
 export const Header = () => {
@@ -22,38 +21,40 @@ export const Header = () => {
   };
 
   return (
-    <header className="fixed top-0 w-full z-50 backdrop-blur flex justify-start md:justify-center items-center">
-      <div className="flex justify-between items-center p-4 w-full md:w-auto">
-        <button
-          className="text-white md:hidden focus:outline-none order-first"
-          onClick={toggleMenu}
-        >
-          &#9776;
-        </button>
-        <nav
-          className={`flex flex-col md:flex-row md:gap-6 absolute md:relative md:bg-transparent w-full md:w-auto left-0 md:p-0 transition-transform gap-1 p-4 border border-white/15 rounded-lg bg-white/10 backdrop-blur ${
-            isOpen ? "top-16" : "top-[-490px]"
-          } md:top-0 z-50`}
-        >
-          {navigation.map((item) => (
-            <Link
-              key={item.name}
-              href={item.link}
-              className="nav-item block text-white px-6 py-3 rounded-full hover:bg-gradient-to-r from-emerald-300 to-sky-400 transition-all"
-              onClick={(e) => {
-                if (item.isDownload) {
-                  e.preventDefault();
-                  window.location.href = item.link;
-                } else {
-                  toggleMenu();
-                }
-              }}
-              download={item.isDownload ? item.name : undefined}
-            >
-              {item.name}
-            </Link>
-          ))}
-        </nav>
+    <header className="fixed top-0 w-full z-10 backdrop-blur">
+      <div className="container mx-auto px-4">
+        <div className="flex justify-between items-center md:justify-center py-4 border border-white/15 rounded-lg bg-transparent">
+          <button
+            className="text-white md:hidden focus:outline-none"
+            onClick={toggleMenu}
+            aria-label="Toggle menu"
+          >
+            &#9776;
+          </button>
+          <nav
+            className={`${
+              isOpen ? "block" : "hidden"
+            } md:block absolute md:relative top-full left-0 w-full md:w-auto bg-white/10 md:bg-transparent backdrop-blur md:backdrop-blur-none`}
+          >
+            <ul className="flex flex-col md:flex-row md:items-center md:justify-center md:space-x-4">
+              {navigation.map((item) => (
+                <li key={item.name}>
+                  <Link
+                    href={item.link}
+                    className="block text-white px-4 py-2 md:py-0 hover:bg-gradient-to-r from-emerald-300 to-sky-400 transition-all rounded-full"
+                    onClick={() => setIsOpen(false)}
+                    target={item.name === "Resume" ? "_blank" : undefined}
+                    rel={
+                      item.name === "Resume" ? "noopener noreferrer" : undefined
+                    }
+                  >
+                    {item.name}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </nav>
+        </div>
       </div>
     </header>
   );

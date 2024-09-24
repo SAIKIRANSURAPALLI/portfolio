@@ -142,10 +142,10 @@ export const HeroSection = () => {
             </span>
           </h1>
           <h1 className="font-serif text-3xl md:text-5xl text-center mt-4 tracking-widest">
-            I'M <strong className="main-name">Saikiran</strong>
+            I&apos;M <strong className="main-name">Saikiran</strong>
           </h1>
           <div className="text-white/60 font-serif text-3xl md:text-5xl text-center mt-4 tracking-wide">
-            <div className="text-emerald-300">
+            <div className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-300 to-sky-400">
               <Typing />
             </div>
           </div>

@@ -1,8 +1,10 @@
 import type { Metadata } from "next";
 import { Inter, Calistoga } from "next/font/google";
-import "./globals.css";
 import { twMerge } from "tailwind-merge";
+import { Header } from "@/sections/Header";
 import "react-vertical-timeline-component/style.min.css";
+import "./globals.css";
+
 const inter = Inter({ subsets: ["latin"], variable: "--font-sans" });
 
 const calistoga = Calistoga({
@@ -18,9 +20,9 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode;
-}>) {
+}) {
   return (
     <html lang="en">
       <body
@@ -30,7 +32,8 @@ export default function RootLayout({
           "bg-gray-900 text-white antialiased font-sans"
         )}
       >
-        {children}
+        <Header />
+        <main>{children}</main>
       </body>
     </html>
   );

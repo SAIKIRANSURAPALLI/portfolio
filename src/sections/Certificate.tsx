@@ -1,8 +1,8 @@
 "use client";
-import certImage1 from "@/assets/images/memoji-avatar-1.png";
-import certImage2 from "@/assets/images/memoji-avatar-2.png";
-import certImage3 from "@/assets/images/memoji-avatar-3.png";
-import certImage4 from "@/assets/images/memoji-avatar-4.png";
+import certImage1 from "@/assets/images/socialprachar.jpeg";
+import certImage2 from "@/assets/images/pentagon.jpeg";
+import certImage3 from "@/assets/images/ccna.jpg";
+import certImage4 from "@/assets/images/simplilearn.jpg";
 import { SectionHeader } from "@/components/SectionHeader";
 import Image from "next/image";
 import { Card } from "@/components/Card";

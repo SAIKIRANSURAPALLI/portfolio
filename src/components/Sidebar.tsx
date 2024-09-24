@@ -15,14 +15,14 @@ export const Sidebar = ({
   onCategoryChange,
 }: SidebarProps) => {
   return (
-    <div className="bg-gray-900 rounded-xl p-20">
-      <div className="flex flex-col gap-4">
+    <div className="bg-gray-900 rounded-xl p-6 sm:p-8 md:p-20">
+      <div className="flex sm:overflow-x-auto sm:flex-nowrap md:flex-wrap md:justify-center gap-2 whitespace-nowrap md:whitespace-normal">
         {categories.map((category) => (
           <button
             key={category}
             onClick={() => onCategoryChange(category)}
             className={twMerge(
-              "py-3 px-6 rounded-xl text-center font-bold",
+              "py-2 px-4 rounded-xl text-center font-bold",
               selectedCategory === category
                 ? "bg-gray-800 text-emerald-500"
                 : "text-gray-400 hover:text-gray-300"
