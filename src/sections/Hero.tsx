@@ -8,8 +8,13 @@ import SparkleIcon from "@/assets/icons/sparkle.svg";
 import { HeroOrbit } from "@/components/HeroOrbit";
 import Typing from "@/components/Typing";
 import { useRouter } from "next/router";
+import { useState, useEffect } from "react";
 export const HeroSection = () => {
   const router = useRouter();
+  const [mounted, setMounted] = useState(false);
+  useEffect(() => {
+    setMounted(true);
+  }, []);
   const handleContactClick = () => {
     const link = document.createElement("a");
     link.href = "/resume.pdf";
@@ -21,7 +26,9 @@ export const HeroSection = () => {
   };
 
   const handleExploreMyWorkClick = () => {
-    router.push("/project");
+    if (mounted) {
+      router.push("/project");
+    }
   };
   return (
     <section
