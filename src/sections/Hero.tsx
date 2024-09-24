@@ -9,6 +9,7 @@ import { HeroOrbit } from "@/components/HeroOrbit";
 import Typing from "@/components/Typing";
 import { useRouter } from "next/router";
 export const HeroSection = () => {
+  const router = useRouter();
   const handleContactClick = () => {
     const link = document.createElement("a");
     link.href = "/resume.pdf";
@@ -20,7 +21,6 @@ export const HeroSection = () => {
   };
 
   const handleExploreMyWorkClick = () => {
-    const router = useRouter();
     router.push("/project");
   };
   return (
