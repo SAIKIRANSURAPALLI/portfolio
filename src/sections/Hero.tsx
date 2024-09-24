@@ -7,14 +7,14 @@ import StarIcon from "@/assets/icons/star.svg";
 import SparkleIcon from "@/assets/icons/sparkle.svg";
 import { HeroOrbit } from "@/components/HeroOrbit";
 import Typing from "@/components/Typing";
-import { useRouter } from "next/router";
-import { useState, useEffect } from "react";
+// import { useRouter } from "next/router";
+// import { useState, useEffect } from "react";
 export const HeroSection = () => {
-  const router = useRouter();
-  const [mounted, setMounted] = useState(false);
-  useEffect(() => {
-    setMounted(true);
-  }, []);
+  // const router = useRouter();
+  // const [mounted, setMounted] = useState(false);
+  // useEffect(() => {
+  //   setMounted(true);
+  // }, []);
   const handleContactClick = () => {
     const link = document.createElement("a");
     link.href = "/resume.pdf";
@@ -25,11 +25,11 @@ export const HeroSection = () => {
     window.location.href = `mailto:surapallisaikiran@gmail.com?subject=Contact%20from%20Website`;
   };
 
-  const handleExploreMyWorkClick = () => {
-    if (mounted) {
-      router.push("/project");
-    }
-  };
+  // const handleExploreMyWorkClick = () => {
+  //   if (mounted) {
+  //     router.push("/project");
+  //   }
+  // };
   return (
     <section
       className="py-32 md:py-48 lg:py-60 relative z-0 overflow-x-clip"
@@ -163,7 +163,7 @@ export const HeroSection = () => {
         >
           <button
             className="inline-flex items-center gap-2 border border-white/15 px-6 h-12 rounded-xl"
-            onClick={handleExploreMyWorkClick}
+            // onClick={handleExploreMyWorkClick}
           >
             <span className="font-semibold">Explore My Work</span>
             <ArrowDown className="size-4" />
